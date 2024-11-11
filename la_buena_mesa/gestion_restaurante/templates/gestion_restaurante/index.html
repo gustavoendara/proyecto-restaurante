@@ -1,0 +1,12 @@
+{% extends 'gestion_restaurante/base.html' %}
+
+{% block title %}Bienvenida - La Buena Mesa{% endblock %}
+
+{% block content %}
+<div class="text-center mt-5">
+    <h1>Bienvenido al Restaurante "La Buena Mesa"</h1>
+    <p>Gestiona tus reservas, pedidos y más de manera fácil y rápida.</p>
+    <a href="{% url 'lista_reservas' %}" class="btn btn-primary mt-3">Ver Reservas</a>
+    <a href="{% url 'lista_pedidos' %}" class="btn btn-secondary mt-3">Ver Pedidos</a>
+</div>
+{% endblock %}

@@ -1,0 +1,22 @@
+{% extends 'gestion_restaurante/base.html' %}
+
+{% block title %}Detalle de Pedido{% endblock %}
+
+{% block content %}
+<h1>Detalle del Pedido</h1>
+<p><strong>ID:</strong> {{ pedido.id }}</p>
+<p><strong>Cliente:</strong> {{ pedido.cliente.nombre }}</p>
+<p><strong>Total:</strong> {{ pedido.total }}</p>
+<p><strong>Fecha del Pedido:</strong> {{ pedido.fecha_pedido }}</p>
+<p><strong>Estado:</strong> {{ pedido.estado }}</p>
+<p><strong>Método de Pago:</strong> {{ pedido.metodo_pago.tipo }}</p>
+<h3>Items del Pedido:</h3>
+<ul>
+    {% for item in pedido.itempedido_set.all %}
+    <li>{{ item.producto }} - {{ item.cantidad }} unidades - ${{ item.precio_unitario }}</li>
+    {% empty %}
+    <li>No hay items en este pedido.</li>
+    {% endfor %}
+</ul>
+<a href="{% url 'lista_pedidos' %}" class="btn btn-secondary">Volver</a>
+{% endblock %}

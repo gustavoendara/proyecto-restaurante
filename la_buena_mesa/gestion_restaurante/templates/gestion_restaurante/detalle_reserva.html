@@ -1,0 +1,13 @@
+{% extends 'gestion_restaurante/base.html' %}
+
+{% block title %}Detalle de Reserva{% endblock %}
+
+{% block content %}
+<h1>Detalle de la Reserva</h1>
+<p><strong>ID:</strong> {{ reserva.id }}</p>
+<p><strong>Cliente:</strong> {{ reserva.cliente.nombre }}</p>
+<p><strong>Mesa:</strong> {{ reserva.mesa.ubicacion }}</p>
+<p><strong>Fecha de Reserva:</strong> {{ reserva.fecha_reserva }}</p>
+<p><strong>Estado:</strong> {{ reserva.estado }}</p>
+<a href="{% url 'lista_reservas' %}" class="btn btn-secondary">Volver</a>
+{% endblock %}
